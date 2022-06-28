@@ -22,7 +22,7 @@ classname_to_id = {
     "speedboat":9,
     "passenger":9,
     "public_service":9,
-    "ship":9,
+    "unknown_ship":9,
 
 }
 
