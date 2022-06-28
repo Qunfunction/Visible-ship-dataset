@@ -1,0 +1,31 @@
+import json
+import numpy as np
+import matplotlib.pyplot as plt
+c = open('./annotations/train2017.json','r')
+ret_dic = json.load(c)
+image_size_dic = {}
+x_values = []
+y_values = []
+for text1 in ret_dic['images']:
+
+    image_size_dic[str(text1['id'])] = [text1['height'],text1['width']]
+    #print(image_size_dic)
+
+for text2 in ret_dic['annotations']:
+    #print('############:',text2['bbox'])
+    #print('############:',text2['image_id'])
+    id1 = text2['image_id']
+    img_height_now = image_size_dic[str(id1)][0]
+    img_width_now = image_size_dic[str(id1)][1]
+    height = text2['bbox'][3]-text2['bbox'][1]
+    width = text2['bbox'][2]-text2['bbox'][0]
+    #print([height/img_height_now,width/img_width_now])
+
+    x_values.extend([height/img_height_now])
+    y_values.extend([width/img_width_now])
+plt.scatter(x_values, y_values, s=10)
+plt.title('Square Numbers', fontsize=24)
+plt.xlabel('Value', fontsize=14)
+plt.ylabel('Square of Value', fontsize=14)
+plt.tick_params(axis='both', which='major', labelsize=14)
+plt.show()
