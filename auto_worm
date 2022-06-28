@@ -1,0 +1,13 @@
+from selenium import webdriver 
+import time  
+import urllib  
+from bs4 import BeautifulSoup as bs
+import re  
+import os  
+import crawling_datasets
+
+#*******本脚本运行时需要本机安装 Chrome 浏览器以及Chrome的驱动，同时需要selenium库的支撑********
+
+search_query='船' #检索的关键词。
+location_driver='C:\\Program Files (x86)\\Google\\Chrome\\Application\\chromedriver.exe'#Chrome驱动程序在电脑中的位置
+picpath = 'E:\\网上爬虫\\船\\%s' #%(foldername)#下载到的本地目录
