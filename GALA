@@ -20,7 +20,7 @@ class h_swish(nn.Module):
         return x * self.sigmoid(x)
 
 
-class Global attention(nn.Module):
+class Global_attention(nn.Module):
     def __init__(self, channel, reduction=16):
         super(Global attention, self).__init__()
         self.avg_pool = nn.AdaptiveAvgPool2d(1)
@@ -37,12 +37,13 @@ class Global attention(nn.Module):
         y = self.fc(y).view(b, c, 1, 1)
         return x * y.expand_as(x)
 
-class Local attention(nn.Module):
-    def __init__(self, inp, oup, reduction=32):
+class Local_attention(nn.Module):
+    def __init__(self, inp, reduction=32):
         super(Local attention, self).__init__()
         self.pool_h = nn.AdaptiveAvgPool2d((None, 1))
         self.pool_w = nn.AdaptiveAvgPool2d((1, None))
-
+        
+        oup = inp
         mip = max(8, inp // reduction)
 
         self.conv1 = nn.Conv2d(inp, mip, kernel_size=1, stride=1, padding=0)
@@ -74,3 +75,10 @@ class Local attention(nn.Module):
         out = identity * a_w * a_h
 
         return out
+ 
+if __name__=='__main__':
+
+    x = torch.rand(3, 256, 256, 256)
+    y = Global_attention(x)
+    out = Local_attention(y)
+    print(out)
