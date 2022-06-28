@@ -1,0 +1,82 @@
+from pycocotools.coco import COCO
+import os
+import shutil
+from tqdm import tqdm
+import skimage.io as io
+import matplotlib.pyplot as plt
+import cv2
+from PIL import Image, ImageDraw
+#保存路径，需要修改的地方
+
+savepath ="D:/大白菜/dataset/select_val/"
+img_save =savepath + 'image/'
+anno_save = savepath + 'Annotations/'
+
+#原coco数据集得到路径
+dataDir = "G:/数据集/voc 2012/HRSID_jpg/JPEGImages"
+#提取的数据集
+datasets_list = ['train2017']
+#提取的数据类别
+classes_names=['ship']
+
+
+#不需要修改的地方
+# if the dir is not exists,make it,else delete it
+def mkr(path):
+    if os.path.exists(path):
+        shutil.rmtree(path)
+        os.mkdir(path)
+    else:
+        os.mkdir(path)
+mkr(img_save)
+#mkr(anno_save)
+
+
+def id2name(coco):
+    classes = dict()
+    for cls in coco.dataset['categories']:
+        classes[cls['id']] = cls['name']
+    return classes
+
+def save_annotations_and_imgs(coco, dataset, filename):
+    # eg:COCO_train2014_000000196610.jpg-->COCO_train2014_000000196610.xml
+
+    img_path = dataDir + '/'+dataset + '/' + filename
+    dst_imgpath = img_save + filename
+
+    shutil.copy(img_path, dst_imgpath)
+
+for dataset in datasets_list:
+    # ./COCO/annotations/instances_train2014.json
+    # annFile = '{}/annotations/instances_{}.json'.format(dataDir, dataset)
+    # annFile = 'train2017.json'.format(dataDir, dataset)
+    # # COCO API for initializing annotated data
+    # coco = COCO(annFile)
+    annFile =r'G:\数据集\voc 2012\HRSID_jpg\JPEGImages\train2017\test2017.json'
+    coco = COCO(annFile)
+    '''
+    COCO 对象创建完毕后会输出如下信息:
+    loading annotations into memory...
+    Done (t=0.81s)
+    creating index...
+    index created!
+    至此, json 脚本解析完毕, 并且将图片和对应的标注数据关联起来.
+    '''
+    # show all classes in coco
+    classes = id2name(coco)
+    print(classes)
+    # [1, 2, 3, 4, 6, 8]
+    classes_ids = coco.getCatIds(catNms=classes_names)
+
+    for cls in classes_names:
+        # Get ID number of this class
+        cls_id = coco.getCatIds(catNms=[cls])
+        img_ids = coco.getImgIds(catIds=cls_id)
+        print(cls, len(img_ids))
+        # imgIds=img_ids[0:10]
+        for imgId in tqdm(img_ids):
+            img = coco.loadImgs(imgId)[0]
+            filename = img['file_name']
+
+
+save_annotations_and_imgs(coco, dataset, filename)
