@@ -1,0 +1,54 @@
+# import os
+# import json
+# from ipdb import set_trace
+#
+# json_dir = './engineering_ship'
+# json_files = os.listdir(json_dir)
+#
+# json_dict = {}
+# # 需要修改的新名称
+# new_name = 'engineering'
+#
+# for json_file in json_files:
+#
+#     jsonfile = json_dir + '/' + json_file
+#     # 读单个json文件
+#     with open(jsonfile, 'r', encoding='utf-8') as jf:
+#
+#         info = json.load(jf)
+#         # print(type(info))
+#         # 找到位置进行修改
+#         for i, label in enumerate(info['shapes']):
+#             info['shapes'][i]['label'] = new_name
+#         # 使用新字典替换修改后的字典
+#         json_dict = info
+#         print(json_dict)
+#         # set_trace()
+#     # 将替换后的内容写入原文件
+#     with open(jsonfile, 'w') as new_jf:
+#         json.dump(json_dict, new_jf)
+#
+# print('change name over!')
+import glob
+import json
+from tqdm import tqdm
+
+label_list = []
+file_list = glob.glob('./boats/*.json')
+for file in tqdm(file_list):
+    # 打开文件取出数据并修改，然后存入变量
+    with open(file, 'r') as f:
+        data = json.load(f)
+        shapes = data['shapes']
+        for shape in shapes:
+            shape['label'] = shape['label'].replace('sdasd', '')
+            if shape['label'] == "engineering_ship":
+                shape['label'] = "engineering"
+        if shape['label'] not in label_list:
+            label_list.append(shape['label'])
+    # 打开文件并覆盖写入修改后内容
+    with open(file, 'w') as f:
+        json.dump(data, f)
+
+for i in label_list:
+    print(i)
