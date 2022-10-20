@@ -26,17 +26,17 @@ rename_label:It is a method for modifying the target name to a specific label na
 This implementation is based on mmdetection(v1.0.0),which can be found in the GitHub by search the key word of mmdetection. 
 ## Reproduce the experimentation
 
-Train with multiple GPUs
+### Train with multiple GPUs
 ./tools/dist_train.sh ${CONFIG_FILE} ${GPU_NUM}
 
 Example:
 ./tools/dist_train.sh configs/solo/solo_r50_fpn_8gpu_1x.py  4
-Testing
+### Testing
 ./tools/dist_test.sh CONFIG_FILE  CHECKPOINT_FILE  GPU_NUM  --show --out  OUTPUT_FILE --eval segm
 
 Example: 
 ./tools/dist_test.sh configs/solo/solo_r50_fpn_8gpu_1x.py SOLO_R50_1x.pth  8  --show --out results_solo.pkl --eval segm
-Visualization
+### Visualization
 python tools/test_ins_vis.py CONFIG_FILE  CHECKPOINT_FILE --show --save_dir  ${SAVE_DIR}
 
 Example: 
