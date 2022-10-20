@@ -1,8 +1,7 @@
 
 
 
-
-# Visible-ship-dataset is a data set for ship instance segmentation tasks in visible light images. This dataset includes two types of marine ship instance segmentation 
+Visible-ship-dataset is a data set for ship instance segmentation tasks in visible light images. This dataset includes two types of marine ship instance segmentation 
 datasets, named as MariBoats and MariBoatsSubclass respectively, which can be used for different research purpose. The MariBoats dataset used all the 6.2k images and all 
 the ships labelled were assigned to only one category, namely ‘ship’, resulting in 15.7k ship segmentation annotations. This dataset with one category can satisfy the 
 basic instance segmentation requirements (For example, avoiding obstacles (ships) during unmanned driving under the complex sea scene). The MariBoatsSubclass contains 
