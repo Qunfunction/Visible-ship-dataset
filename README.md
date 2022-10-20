@@ -23,7 +23,7 @@ rename_label:It is a method for modifying the target name to a specific label na
 # Installation and Reproduce the experimentation
 ## Installation
 
-This implementation is based on mmdetection(v1.0.0),which can be found in the GitHub by search the key word of mmdetection. 
+This implementation is based on mmdetection(v1.0.0),which can be found in the GitHub by searching the key word of mmdetection. 
 ## Reproduce the experimentation
 
 ### Train with multiple GPUs
