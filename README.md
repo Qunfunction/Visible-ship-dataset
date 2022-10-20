@@ -32,12 +32,12 @@ Train with multiple GPUs
 Example:
 ./tools/dist_train.sh configs/solo/solo_r50_fpn_8gpu_1x.py  4
 Testing
-./tools/dist_test.sh ${CONFIG_FILE} ${CHECKPOINT_FILE} ${GPU_NUM}  --show --out  ${OUTPUT_FILE} --eval segm
+./tools/dist_test.sh CONFIG_FILE CHECKPOINT_FILE GPU_NUM  --show --out  OUTPUT_FILE --eval segm
 
 Example: 
 ./tools/dist_test.sh configs/solo/solo_r50_fpn_8gpu_1x.py SOLO_R50_1x.pth  8  --show --out results_solo.pkl --eval segm
 Visualization
-python tools/test_ins_vis.py ${CONFIG_FILE} ${CHECKPOINT_FILE} --show --save_dir  ${SAVE_DIR}
+python tools/test_ins_vis.py CONFIG_FILE CHECKPOINT_FILE --show --save_dir  ${SAVE_DIR}
 
 Example: 
 python tools/test_ins_vis.py configs/solo/solo_r50_fpn_8gpu_1x.py  SOLO_R50_1x.pth --show --save_dir  work_dirs/vis_solo
