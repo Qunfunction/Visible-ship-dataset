@@ -9,6 +9,8 @@ The MariBoatsSubclass dataset contains 3.1k images and 4.5k ship annotations. Th
 ## 1. Dataset download
 link：https://pan.baidu.com/s/1Lg2doyPyh2uazRma_pZpJw Extraction code:：2w0m ；weiyun link：https://share.weiyun.com/1jFkqLpK code：4yi5x3
 
+one drive: https://1drv.ms/u/s!AgjHw_dVzKUrgUR5YOvEeJobtdhz?e=RqP7Sr
+
 ## 2. Code Usage Description
  
 #### GALA 
