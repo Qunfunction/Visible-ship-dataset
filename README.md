@@ -11,15 +11,22 @@ link：https://pan.baidu.com/s/1Lg2doyPyh2uazRma_pZpJw Extraction code:：2w0m �
 
 ## Code Usage Description
  
-#### GALA :
+#### GALA 
 It is the global and local attention mechanism.
-LabelMe2COCO:It is a method to convert labelme format to MS COCO format for convolutional neural network training.
-Plot a scatter plot of size distribution:It is a method to plot the distribution of image size and object size in a given dataset
-coco_annotation extraction:It is a method for extracting annotations containing specific object labels from MS COCO format dataset
-coco_image extraction:It is a method for extracting images containing specific object labels from MS COCO format dataset.
-crawling_datasets:It is a method for automatically grabbing images of specific object labels from massive online databases
-merge_subclasses:It is a method for merging a single label dataset into a dataset containing multiple  object labels.
-rename_label:It is a method for modifying the target name to a specific label name in the dataset.
+#### LabelMe2COCO
+It is a method to convert labelme format to MS COCO format for convolutional neural network training.
+#### Plot a scatter plot of size distribution
+It is a method to plot the distribution of image size and object size in a given dataset
+#### coco_annotation extraction
+It is a method for extracting annotations containing specific object labels from MS COCO format dataset
+#### coco_image extraction
+It is a method for extracting images containing specific object labels from MS COCO format dataset.
+#### crawling_datasets
+It is a method for automatically grabbing images of specific object labels from massive online databases
+#### merge_subclasses
+It is a method for merging a single label dataset into a dataset containing multiple  object labels.
+#### rename_label
+It is a method for modifying the target name to a specific label name in the dataset.
 
 # Installation and Reproduce the experimentation
 ## Installation
