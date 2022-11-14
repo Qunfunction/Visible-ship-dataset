@@ -51,4 +51,4 @@ Example:
 python tools/test_ins_vis.py configs/solo/solo_r50_fpn_8gpu_1x.py  SOLO_R50_1x.pth --show --save_dir  work_dirs/vis_solo
 
 # Contributing to the project
-Any pull requests or issues are welcome.
+Any requests or issues are welcome.
