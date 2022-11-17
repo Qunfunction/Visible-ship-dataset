@@ -30,7 +30,7 @@ It is a method for merging a single label dataset into a dataset containing mult
 #### rename_label
 It is a method for modifying the target name to a specific label name in the dataset.
 
-# Installation and reproduce the experimentation
+# Install and reproduce experiments
 ## 1. Installation
 
 This implementation is based on mmdetection(v1.0.0),which can be found in the GitHub by searching the key word of mmdetection. 
