@@ -54,4 +54,4 @@ python tools/test_ins_vis.py configs/solo/solo_r50_fpn_8gpu_1x.py  SOLO_R50_1x.p
 
 # Citation
 ## If you use this toolbox or benchmark in your research, please cite this project.
-（SUN Z, MENG C, HUANG T, et al. 2023. Marine ship instance segmentation by deep neural networks using a global and local attention (GALA) mechanism. PLOS ONE [J], 18: e0279248.）
+（Sun Z, Meng C, Huang T, et al. Marine ship instance segmentation by deep neural networks using a global and local attention (GALA) mechanism[J]. Plos one, 2023, 18(2): e0279248.）
