@@ -53,5 +53,5 @@ Example:
 python tools/test_ins_vis.py configs/solo/solo_r50_fpn_8gpu_1x.py  SOLO_R50_1x.pth --show --save_dir  work_dirs/vis_solo
 
 # Citation
-If you use this toolbox or benchmark in your research, please cite this project.
+## If you use this toolbox or benchmark in your research, please cite this project.
 （SUN Z, MENG C, HUANG T, et al. 2023. Marine ship instance segmentation by deep neural networks using a global and local attention (GALA) mechanism. PLOS ONE [J], 18: e0279248.）
